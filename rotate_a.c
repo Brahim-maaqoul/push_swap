@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/29 20:20:06 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2021/12/29 23:55:23 by bmaaqoul         ###   ########.fr       */
+/*   Created: 2021/12/31 02:41:42 by bmaaqoul          #+#    #+#             */
+/*   Updated: 2021/12/31 03:11:20 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,26 @@ t_list	*rotate_a(t_list **head)
 	last = ft_lstlast(*head);
 	if (ft_lstsize(*head) == 1)
 		return (*head);
-	tmp = *head;
-	*head = last;
-	last->next = tmp;
+	tmp = last;
+	last->next = *head;
+	*head = (*head)->next;
 	return (*head);
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+	t_list	*node;
+
+	node = ft_lstnew(2);
+	node->next = ft_lstnew(3);
+	node->next->next = ft_lstnew(1);
+	printf("%d\n", node->num);
+	printf("%d\n", node->next->num);
+	printf("%d\n\n", node->next->next->num);
+	rotate_a(&node);
+	printf("%d\n", node->num);
+	printf("%d\n", node->next->num);
+	printf("%d\n", node->next->next->num);
 }
