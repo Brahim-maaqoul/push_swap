@@ -6,24 +6,22 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 20:20:06 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2021/12/31 00:49:28 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/03 23:43:12 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*rev_rotate_a(t_list **head)
+void	rev_rotate_a(t_list **head)
 {
 	t_list	*tmp;
 	t_list	*last;
 
 	last = ft_lstlast(*head);
-	if (ft_lstsize(*head) == 1)
-		return (*head);
 	tmp = *head;
 	*head = last;
 	last->next = tmp;
-	return (*head);
+	ft_putstr("rra\n");
 }
 
 // #include <stdio.h>

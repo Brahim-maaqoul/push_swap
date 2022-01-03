@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_a.c                                         :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/31 02:41:42 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/03 23:44:10 by bmaaqoul         ###   ########.fr       */
+/*   Created: 2022/01/03 23:39:58 by bmaaqoul          #+#    #+#             */
+/*   Updated: 2022/01/03 23:42:13 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate_a(t_list **head)
+void	ft_putstr(char *str)
 {
-	t_list	*tmp;
-	t_list	*last;
+	int	i;
 
-	last = ft_lstlast(*head);
-	tmp = last;
-	last->next = *head;
-	*head = (*head)->next;
-	ft_putstr("ra\n");
-}
-
-#include <stdio.h>
-
-int main(void)
-{
-	t_list	*node;
-
-	node = ft_lstnew(2);
-	node->next = ft_lstnew(3);
-	node->next->next = ft_lstnew(1);
-	printf("%d\n", node->num);
-	printf("%d\n", node->next->num);
-	printf("%d\n\n", node->next->next->num);
-	rotate_a(&node);
+	i = 0;
+	while (str[i])
+		write(1, &str[i++], 1);
 }
