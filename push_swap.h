@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:38:15 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/04 03:49:44 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/05 23:11:14 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,14 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
+int		ft_atoi(const char	*str);
+int		ft_check(t_list **head);
+int	ft_duplicate(t_list **head);
 void	ft_putstr(char *str);
+size_t    ft_strlen(const char *str);
+char    *ft_strjoin(int size, char **strs, char *sep);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	**ft_split(char const *s, char c);
+char	*ft_strdup(const char *src);
 
 #endif
