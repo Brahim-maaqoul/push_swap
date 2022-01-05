@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 14:32:03 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/03 23:42:45 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/05 21:56:49 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push_a(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 
-	if (!*stack_b)
+	if (!*stack_b || !*stack_a)
 		return ;
 	tmp = *stack_b;
 	*stack_b = (*stack_b)->next;

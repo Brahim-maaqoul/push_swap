@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 03:46:08 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/04 03:49:04 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/05 21:58:09 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	rrb(t_list **head)
 
 void	rrr(t_list **stack_a, t_list **stack_b)
 {
+	if (!*stack_a || !*stack_b)
+		return ;
 	rra(stack_a);
 	rrb(stack_b);
 	ft_putstr("rrr\n");
