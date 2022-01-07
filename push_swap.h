@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:38:15 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/05 23:11:14 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/07 22:20:36 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 typedef struct s_stack{
 	int				num;
 	struct s_stack	*next;
 }				t_list;
 
+void	free_tab(char **tab, int i);
 void	swap_a(t_list **head);
 void	swap_b(t_list **head);
 void	rotate_a(t_list **head);
@@ -36,15 +39,23 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
+void	ft_contain(t_list *stack, char **av, int ac);
+void	put_err();
+void	ft_putnbr(int n);
+void	ft_putchar(char c);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char	*str);
 int		ft_check(t_list **head);
 int	ft_duplicate(t_list **head);
+int	ft_len_tabs(char **strs);
+int	count_args(char *str, char c);
+int	get_index(t_list *head);
+int	ft_isdigit(char *str);
 void	ft_putstr(char *str);
 size_t    ft_strlen(const char *str);
-char    *ft_strjoin(int size, char **strs, char *sep);
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(const char *src);

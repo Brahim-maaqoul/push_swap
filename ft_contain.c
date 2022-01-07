@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 23:47:41 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/07 04:12:34 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/07 22:21:42 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 
 char    **ft_get_line(char **argv, int argc)
 {
-    char    *tmp;
     char    *tmp1;
     char    *str;
     char    **split;
     int        j;
 
     j = 0;
-    tmp = NULL;
     str = NULL;
     while (++j < argc)
     {
@@ -30,10 +28,8 @@ char    **ft_get_line(char **argv, int argc)
             str = ft_strjoin(argv[j], " ");
         else
         {
-            tmp = str;
             tmp1 = ft_strjoin(argv[j], " ");
             str = ft_strjoin(str, tmp1);
-            free(tmp);
             free(tmp1);
         }
     }
@@ -53,36 +49,40 @@ char	**check_error(char **str, int argc)
        put_err();
     while (argv[i])
     {
-        if (ft_atoi(argv[i]) == 0)
+        if (!ft_isdigit(argv[i]))
            	put_err();
         i++;
     }
    return (argv);
 }
-t_list	*ft_contain(char **av, int ac)
-{
-	t_list	*stack;
-	char	**str;
-	int		i;
 
-	i = 1;
-	str = check_error(av, ac);
-	while (*str)
-	{
-		stack = ft_lstnew(ft_atoi(*str));
-		ft_putnbr(stack->num);
-		if (!stack)
-		{
-			free (stack);
-			return (NULL);
-		}
-		stack = stack->next;
-		str++;
-	}
-		//printf("%d\n", stack->num);
-	return (stack);
+void    fillstack(t_list **s, int ac, char **av)
+{
+    char    **tab;
+    int        i;
+    t_list    *a;
+
+    i = 0;
+    tab = check_error(av, ac);
+    i = 1;
+    *s = ft_lstnew(ft_atoi(tab[0]));
+    while (tab[i])
+    {
+        a = ft_lstnew(ft_atoi(tab[i]));
+        ft_lstadd_back(s, a);
+        i++;
+    }
+    free_tab(tab, i);
 }
 int main(int ac, char **av)
 {
-	
+    t_list  *a;
+    fillstack(&a, ac, av);
+    printf("%d\n", a->num);
+    printf("%d\n", a->next->num);
+    printf("%d\n", a->next->next->num);
+    swap_a(&a);
+    printf("%d\n", a->num);
+    printf("%d\n", a->next->num);
+    printf("%d\n", a->next->next->num);
 }
