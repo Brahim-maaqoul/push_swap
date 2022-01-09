@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 23:15:28 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/09 00:28:18 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/10 00:00:03 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,16 @@ int	get_big(t_list *head)
 	int		i;
 	int		j;
 
-	prev = head;
 	if (head->next == NULL)
 		return (1);
-	head = head->next;
+	prev = head;
 	i = 2;
 	j = 1;
 	while (head)
 	{
 		if (head->num > prev->num)
-		{
-			prev->num = head->num;
+		{	
+			prev = prev->next;
 			j = i;
 		}
 		head = head->next;
