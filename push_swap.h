@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:38:15 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/07 22:20:36 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/09 00:05:36 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
-void	ft_contain(t_list *stack, char **av, int ac);
 void	put_err();
 void	ft_putnbr(int n);
 void	ft_putchar(char c);
+void    take_args(t_list **s, int ac, char **av);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
@@ -51,7 +51,8 @@ int		ft_check(t_list **head);
 int	ft_duplicate(t_list **head);
 int	ft_len_tabs(char **strs);
 int	count_args(char *str, char c);
-int	get_index(t_list *head);
+int	get_small(t_list *head);
+int	get_big(t_list *head);
 int	ft_isdigit(char *str);
 void	ft_putstr(char *str);
 size_t    ft_strlen(const char *str);
