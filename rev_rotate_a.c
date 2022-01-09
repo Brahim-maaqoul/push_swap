@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 20:20:06 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/05 21:57:10 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/09 19:22:28 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rev_rotate_a(t_list **head)
 	t_list	*tmp;
 	t_list	*last;
 
-	if (!*head)
+	if (!*head || !(*head)->next)
 		return ;
 	last = ft_lstlast(*head);
 	tmp = *head;
