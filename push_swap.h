@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:38:15 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/09 00:05:36 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/11 00:57:12 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char	*str);
-int		ft_check(t_list **head);
+int		ft_check_sorted(t_list **head);
 int	ft_duplicate(t_list **head);
 int	ft_len_tabs(char **strs);
 int	count_args(char *str, char c);
-int	get_small(t_list *head);
+int	get_small(t_list **head);
 int	get_big(t_list *head);
 int	ft_isdigit(char *str);
 void	ft_putstr(char *str);

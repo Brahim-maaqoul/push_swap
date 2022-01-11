@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 23:47:41 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/08 18:46:12 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/10 01:52:30 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static char    **ft_get_line(char **argv, int argc)
 {
-    char    *tmp1;
+    char    *tmp;
     char    *str;
     char    **split;
     int        j;
@@ -28,9 +28,9 @@ static char    **ft_get_line(char **argv, int argc)
             str = ft_strjoin(argv[j], " ");
         else
         {
-            tmp1 = ft_strjoin(argv[j], " ");
-            str = ft_strjoin(str, tmp1);
-            free(tmp1);
+            tmp = ft_strjoin(argv[j], " ");
+            str = ft_strjoin(str, tmp);
+            free(tmp);
         }
     }
     split = ft_split(str, ' ');

@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 02:41:42 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/09 19:19:18 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/11 01:02:22 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 void	rotate_a(t_list **head)
 {
-	t_list	*tmp;
+	t_list	*a;
 	t_list	*last;
 
-	if (!*head || !(*head)->next)
+	if (!*head)
 		return ;
-	last = ft_lstlast(*head);
-	tmp = last;
-	last->next = *head;
+	a = *head;
 	*head = (*head)->next;
+	last = ft_lstlast(a);
+	last->next = a;
+	last->next->next = NULL;
 	ft_putstr("ra\n");
 }
 
@@ -31,15 +32,22 @@ void	rotate_a(t_list **head)
 // int main(void)
 // {
 // 	t_list	*node;
+// 	t_list	*b;
 
 // 	node = ft_lstnew(2);
 // 	node->next = ft_lstnew(3);
 // 	node->next->next = ft_lstnew(1);
+// 	node->next->next->next = ft_lstnew(4);
 // 	printf("%d\n", node->num);
 // 	printf("%d\n", node->next->num);
-// 	printf("%d\n\n", node->next->next->num);
+// 	printf("%d\n", node->next->next->num);
+// 	printf("%d\n", node->next->next->next->num);
+// 	push_b(&b, &node);
 // 	rotate_a(&node);
+// 	printf("%d\n", b->num);
 // 	printf("%d\n", node->num);
 // 	printf("%d\n", node->next->num);
-// 	printf("%d\n\n", node->next->next->num);
+// 	printf("%d\n", node->next->next->num);
+// 	// printf("%d\n", node->next->next->next->num);
+// 	 //printf("%d\n", node->next->next->next->next->num);
 // }
