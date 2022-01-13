@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 03:43:17 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/10 23:38:36 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/13 14:44:35 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	ra(t_list **head)
 	*head = (*head)->next;
 	last = ft_lstlast(a);
 	last->next = a;
-	last->next->next = NULL;
+	a->next = NULL;
 }
 
 static void	rb(t_list **head)
@@ -37,7 +37,7 @@ static void	rb(t_list **head)
 	*head = (*head)->next;
 	last = ft_lstlast(b);
 	last->next = b;
-	last->next->next = NULL;
+	b->next = NULL;
 }
 
 void	rr(t_list **stack_a, t_list **stack_b)

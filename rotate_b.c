@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 23:44:43 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/10 23:37:49 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/13 14:44:15 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ void	rotate_b(t_list **head)
 	*head = (*head)->next;
 	last = ft_lstlast(b);
 	last->next = b;
-	last->next->next = NULL;
+	b->next = NULL;
 	ft_putstr("rb\n");
 }

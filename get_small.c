@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 13:43:04 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/11 01:00:16 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/13 14:46:40 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@ int	get_small(t_list **head)
 	int		pos;
 
 	pos = 1;
-	tmp = (*head);
-	min = (tmp)->num;
-	(tmp) = (tmp)->next;
+	tmp = *head;
+	min = tmp->num;
+	tmp = tmp->next;
 	while (tmp)
 	{
-		if (min > (tmp)->num)
-			min = (tmp)->num;
-		(tmp) = (tmp)->next;
+		if (min > tmp->num)
+			min = tmp->num;
+		tmp = tmp->next;
 	}
-	tmp = (*head);
-	while ((tmp) && min != (tmp)->num)
+	tmp = *head;
+	while (tmp && min != tmp->num)
 	{
 		pos++;
-		(tmp) = (tmp)->next;
+		tmp = tmp->next;
 	}
 	return (pos);
 }

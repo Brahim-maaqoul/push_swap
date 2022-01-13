@@ -6,34 +6,35 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 23:15:28 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/10 00:00:03 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/13 14:53:31 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_big(t_list *head)
+int	get_big(t_list **head)
 {
-	t_list	*prev;
-	int		i;
-	int		j;
+	t_list	*tmp;
+	int		min;
+	int		pos;
 
-	if (head->next == NULL)
-		return (1);
-	prev = head;
-	i = 2;
-	j = 1;
-	while (head)
+	pos = 1;
+	tmp = *head;
+	min = tmp->num;
+	tmp = tmp->next;
+	while (tmp)
 	{
-		if (head->num > prev->num)
-		{	
-			prev = prev->next;
-			j = i;
-		}
-		head = head->next;
-		i++;
+		if (min < tmp->num)
+			min = tmp->num;
+		tmp = tmp->next;
 	}
-	return (j);
+	tmp = *head;
+	while (tmp && min != tmp->num)
+	{
+		pos++;
+		tmp = tmp->next;
+	}
+	return (pos);
 }
 
 // #include <stdio.h>
