@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:38:15 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/11 00:57:12 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/14 19:18:55 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,20 @@ void	put_err();
 void	ft_putnbr(int n);
 void	ft_putchar(char c);
 void    take_args(t_list **s, int ac, char **av);
+void	algo_3(t_list **a);
+void	algo_5(t_list **a, t_list **b);
+void	algo_10(t_list **a, t_list **b);
+void	algo_100(t_list **a, t_list **b);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char	*str);
 int		ft_check_sorted(t_list **head);
-int	ft_duplicate(t_list **head);
+int	ft_duplicate(char **av);
 int	ft_len_tabs(char **strs);
 int	count_args(char *str, char c);
 int	get_small(t_list **head);
-int	get_big(t_list *head);
+int	get_big(t_list **head);
 int	ft_isdigit(char *str);
 void	ft_putstr(char *str);
 size_t    ft_strlen(const char *str);
