@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 23:47:41 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/17 01:31:20 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/18 03:01:46 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,17 +76,17 @@ void    take_args(t_list **s, int ac, char **av)
     }
     free_tab(tab, i);
 }
-int main(int ac, char **av)
-{
-    t_list  *a;
-    t_list  *b;
+// int main(int ac, char **av)
+// {
+//     t_list  *a;
+//     t_list  *b;
 
-    take_args(&a, ac, av);
-    // printf("%d\n", a->num);
-    // printf("%d\n", a->next->num);
-    // printf("%d\n", a->next->next->num);
-    // push_b(&b, &a);
-    // printf("%d\n", a->num);
-    // printf("%d\n", a->next->num);
-    // printf("%d\n", b->num);
-}
+//     take_args(&a, ac, av);
+//     // printf("%d\n", a->num);
+//     // printf("%d\n", a->next->num);
+//     // printf("%d\n", a->next->next->num);
+//     // push_b(&b, &a);
+//     // printf("%d\n", a->num);
+//     // printf("%d\n", a->next->num);
+//     // printf("%d\n", b->num);
+// }

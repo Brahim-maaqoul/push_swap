@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 04:23:08 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/18 01:00:08 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/18 02:37:08 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ int	*list_to_tab(t_list **a)
 
 	i = 0;
 	tab = malloc(ft_lstsize(*a) * sizeof(int));
-	if (!tab)
-		return (0);
 	tmp = *a;
 	while (tmp)
 	{
@@ -53,7 +51,6 @@ int	*list_to_tab(t_list **a)
 		i++;
 	}
 	sort_tab(tab, ft_lstsize(*a));
-	tab[i] = 0;
 	return (tab);
 }
 
