@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 19:17:43 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/17 03:11:38 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/18 00:59:28 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,13 @@ static void	part_a(t_list **a, t_list **b)
 	{
 		while (i-- > 1)
 			rotate_a(a);
-		push_b(b, a);
 	}
 	else
 	{
 		while(i++ <= ft_lstsize(*a))
 			rev_rotate_a(a);
-		push_b(b, a);
 	}
+	push_b(b, a);
 }
 
 static void	part_b(t_list **a, t_list **b)
@@ -40,58 +39,33 @@ static void	part_b(t_list **a, t_list **b)
 	{
 		while (i-- > 1)
 			rotate_a(b);
-		push_a(a, b);
 	}
 	else
 	{
 		while (i++ <= ft_lstsize(*b))
 			rev_rotate_b(b);
-		push_a(a, b);
 	}
-}
-
-static void	push_parts(t_list **a, t_list **b, int key_nbr)
-{
-	t_list	*tmp;
-	int		i;
-	int		pos;
-
-	i = 1;
-	tmp = *a;
-	while (tmp)
-	{
-		if (tmp->num <= key_nbr)
-		{
-			pos = get_pos(a, tmp->num);
-			if (get_pos(a, tmp->num) < (ft_lstsize(*a) / 2))
-			{
-				while (pos-- > 1)
-					rotate_a(a);
-			}
-			else
-			{
-				while (pos++ <= ft_lstsize(*a))
-					rev_rotate_a(a);
-			}
-			push_b(b, a);
-			tmp = *a;
-			continue ;
-		}
-		tmp = tmp->next;
-	}
+	push_a(a, b);
 }
 
 void	algo_100(t_list **a, t_list **b)
 {
 	int	i;
-	int	chunks;
 	int	len;
+	int	*tab;
 
 	i = 1;
-	len = ft_lstsize(*a);
+	len = ft_lstsize(*a) / 4;
+	tab = list_to_tab(a);
+	int j = 0;
+	while (j < ft_lstsize(*a))
+	{
+		printf("%d\n", tab[j]);
+		j++;
+	}
 	while (i < 4)
 	{
-		push_parts(a, b, (ft_lstsize(*a) * i) / 4);
+		push_parts(a, b, tab[(ft_lstsize(*a) * i / 4) - 1]);
 		i++;
 	}
 	while (ft_lstsize(*a))
@@ -100,4 +74,39 @@ void	algo_100(t_list **a, t_list **b)
 		push_a(a, b);
 	while (ft_lstsize(*b))
 		part_b(a, b);
+	free (tab);
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+	t_list	*node;
+	t_list	*b = NULL;
+	
+	node = ft_lstnew(5);
+	node->next = ft_lstnew(4);
+	node->next->next = ft_lstnew(2);
+	node->next->next->next = ft_lstnew(1);
+	node->next->next->next->next = ft_lstnew(6);
+	node->next->next->next->next->next = ft_lstnew(10);
+	node->next->next->next->next->next->next= ft_lstnew(12);
+	node->next->next->next->next->next->next->next = ft_lstnew(9);
+	node->next->next->next->next->next->next->next->next = ft_lstnew(7);
+	node->next->next->next->next->next->next->next->next->next = ft_lstnew(-8);
+	node->next->next->next->next->next->next->next->next->next->next = ft_lstnew(13);
+	node->next->next->next->next->next->next->next->next->next->next->next = ft_lstnew(-100);
+	//node->next->next->next->next->next->next->next->next->next->next->next->next = ft_lstnew(20);
+	algo_100(&node, &b);
+	while (node)
+	{
+		printf("%d\n", node->num);
+		node = node->next;
+	}
+	// printf("%d\n", node->num);
+	// printf("%d\n", node->next->num);
+	// printf("%d\n", node->next->next->num);
+	// printf("%d\n", node->next->next->next->num);
+	// printf("%d\n", node->next->next->next->next->num);
+	// printf("%d\n", node->next->next->next->next->next->num);
 }
