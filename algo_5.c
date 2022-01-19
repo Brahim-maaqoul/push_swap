@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 06:12:18 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/12 06:12:30 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/18 03:03:47 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ static void	check_5(t_list **a, t_list	**b)
 		}
 		push_b(b, a);
 	}
-	
 }
 
 void	algo_5(t_list **a, t_list	**b)
@@ -48,3 +47,22 @@ void	algo_5(t_list **a, t_list	**b)
 	push_a(a, b);
 	push_a(a, b);
 }
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+// 	t_list	*node;
+// 	t_list	*b = NULL;
+// 	int i = 5;
+
+// 	node = (t_list *) malloc(sizeof(t_list));
+
+// 	while (i > 0)
+// 	{
+// 		node->num = i;
+// 		node = node->next;
+// 		i--;
+// 	}
+// 	algo_5(&node, &b);
+// }

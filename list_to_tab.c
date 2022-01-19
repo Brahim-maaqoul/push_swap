@@ -6,35 +6,12 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 04:23:08 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/18 02:37:08 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/19 20:13:13 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-static void	sort_tab(int *tab, int s)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < s)
-	{
-		j = 0;
-		while (j < s - 1)
-		{
-			if (tab[j] > tab[j + 1])
-			{
-				s = tab[j];
-				tab[j] = tab[j + 1];
-				tab[j + 1] = s;
-			}
-			j++;
-		}
-		i++;
-	}
-}
 int	*list_to_tab(t_list **a)
 {
 	int		*tab;
@@ -42,15 +19,14 @@ int	*list_to_tab(t_list **a)
 	int		i;
 
 	i = 0;
-	tab = malloc(ft_lstsize(*a) * sizeof(int));
 	tmp = *a;
+	tab = malloc(ft_lstsize(tmp) * sizeof(int));
 	while (tmp)
 	{
-		tab[i] = tmp->num;
+		tab[i++] = tmp->num;
 		tmp = tmp->next;
-		i++;
 	}
-	sort_tab(tab, ft_lstsize(*a));
+	//sort_tab(tab, ft_lstsize(tmp));
 	return (tab);
 }
 

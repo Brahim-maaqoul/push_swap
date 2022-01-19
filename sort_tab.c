@@ -1,45 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_parts.c                                       :+:      :+:    :+:   */
+/*   sort_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 00:55:01 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/19 02:31:07 by bmaaqoul         ###   ########.fr       */
+/*   Created: 2022/01/19 20:12:56 by bmaaqoul          #+#    #+#             */
+/*   Updated: 2022/01/19 20:13:20 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_parts(t_list **a, t_list **b, int key_nbr)
+void	sort_tab(int *tab, int s)
 {
-	t_list	*tmp;
-	int		pos;
-	int		len;
+	int	i;
+	int	j;
+	int	a;
 
-	pos = 1;
-	len = ft_lstsize(*a) / 2;
-	tmp = *a;
-	while (tmp)
+	i = 0;
+	while (i < s)
 	{
-		if (tmp->num <= key_nbr)
+		j = i + 1;
+		while (j < s)
 		{
-			pos = get_pos(a, tmp->num);
-			if (get_pos(a, tmp->num) <= len)
+			if (tab[j] < tab[i])
 			{
-				while (pos-- > 1)
-					rotate_a(a);
+				a = tab[j];
+				tab[j] = tab[i];
+				tab[i] = a;
 			}
-			else
-			{
-				while (pos++ <= ft_lstsize(*a))
-					rev_rotate_a(a);
-			}
-			push_b(b, a);
-			tmp = *a;
-			continue ;
+			j++;
 		}
-		tmp = tmp->next;
+		i++;
 	}
 }

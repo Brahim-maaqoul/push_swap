@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 02:37:43 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/18 02:39:39 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/19 00:37:48 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	part_a(t_list **a, t_list **b)
 	int	i;
 
 	i = get_small(a);
-	if (i < (ft_lstsize(*a) / 2))
+	if (i <= (ft_lstsize(*a) / 2))
 	{
 		while (i-- > 1)
 			rotate_a(a);
@@ -35,7 +35,7 @@ static void	part_b(t_list **a, t_list **b)
 	int	i;
 
 	i = get_big(b);
-	if (i < (ft_lstsize(*b) / 2))
+	if (i <= (ft_lstsize(*b) / 2))
 	{
 		while (i-- > 1)
 			rotate_a(b);
@@ -52,14 +52,18 @@ void	algo_500(t_list **a, t_list **b)
 {
 	int	i;
 	int	len;
+	int	len1;
 	int	*tab;
+	int	s;
 
 	i = 1;
-	len = ft_lstsize(*a) / 8;
+	s = 12;
+	len1 = ft_lstsize(*a);
+	len = ft_lstsize(*a) / 12;
 	tab = list_to_tab(a);
-	while (i < 8)
+	while (i < 12)
 	{
-		push_parts(a, b, tab[(ft_lstsize(*a) * i / 8)]);
+		push_parts(a, b, tab[(len1 * i / 12) - 1]);
 		i++;
 	}
 	while (ft_lstsize(*a))

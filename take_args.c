@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 23:47:41 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/18 03:01:46 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/01/18 23:53:50 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static char	**check_error(char **str, int argc)
 
     argv = ft_get_line(str, argc);
     i = 0;
-    if (!argv)
+    if (!argv || !*argv)
        put_err();
     while (argv[i])
     {
