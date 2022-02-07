@@ -6,4 +6,5 @@ t_list	**stack_aloc(t_list **a)
   if (!a)
     return (NULL);
   *a = NULL; 
+  return (a);
 }
