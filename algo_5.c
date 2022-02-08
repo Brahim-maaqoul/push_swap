@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 06:12:18 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/18 03:03:47 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/09 00:40:47 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	algo_5(t_list **a, t_list	**b)
 	if (ft_lstsize(*a) == 4)
 		check_5(a, b);
 	algo_3(a);
-	push_a(a, b);
-	push_a(a, b);
+	while (ft_lstsize(*b))
+		push_a(a, b);
 }
 
 // #include <stdio.h>
