@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 02:37:43 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/19 00:37:48 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/11 00:44:49 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	part_b(t_list **a, t_list **b)
 	if (i <= (ft_lstsize(*b) / 2))
 	{
 		while (i-- > 1)
-			rotate_a(b);
+			rotate_b(b);
 	}
 	else
 	{
@@ -54,10 +54,8 @@ void	algo_500(t_list **a, t_list **b)
 	int	len;
 	int	len1;
 	int	*tab;
-	int	s;
 
 	i = 1;
-	s = 12;
 	len1 = ft_lstsize(*a);
 	len = ft_lstsize(*a) / 12;
 	tab = list_to_tab(a);
