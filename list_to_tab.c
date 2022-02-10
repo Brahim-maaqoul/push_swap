@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 04:23:08 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/19 20:13:13 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/10 02:43:06 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	*list_to_tab(t_list **a)
 		tab[i++] = tmp->num;
 		tmp = tmp->next;
 	}
-	//sort_tab(tab, ft_lstsize(tmp));
+	sort_tab(tab, ft_lstsize(*a));
 	return (tab);
 }
 
