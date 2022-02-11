@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 23:47:41 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/18 23:53:50 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/11 16:21:21 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,34 @@ static char    **ft_get_line(char **argv, int argc)
     return (split);
 }
 
+static int    is_curr_str_int(char *str)
+{
+    int            i;
+    long int    num;
+    int            sign;
+
+    i = 0;
+    num = 0;
+    sign = 1;
+    if (str[i] == '-')
+        sign = -1;
+    if (str[i] == '-' || str[i] == '+')
+    {
+        if (!ft_isdigit(&str[++i]))
+            put_err();
+    }
+    while (str[i])
+    {
+        if (!ft_isdigit(&str[i]))
+            return (0);
+        num = (num * 10) + (str[i] - '0');
+        if ((num * sign) > INT_MAX || (num * sign) < INT_MIN)
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
 static char	**check_error(char **str, int argc)
 {
     int        i;
@@ -49,7 +77,7 @@ static char	**check_error(char **str, int argc)
        put_err();
     while (argv[i])
     {
-        if (!ft_isdigit(argv[i]))
+        if (!is_curr_str_int(argv[i]))
            	put_err();
         i++;
     }
