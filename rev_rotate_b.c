@@ -6,13 +6,13 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 23:45:38 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/11 01:21:00 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/12 03:28:01 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rev_rotate_b(t_list **b)
+void	rev_rotate_b(t_list **b, int i)
 {
 	t_list	*last;
 	t_list	*head;
@@ -29,5 +29,6 @@ void	rev_rotate_b(t_list **b)
 		head = head->next;
 	head->next = NULL;
 	free (last);
-	ft_putstr("rrb\n");
+	if (i == 1)
+		ft_putstr("rrb\n");
 }

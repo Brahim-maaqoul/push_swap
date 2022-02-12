@@ -6,13 +6,13 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 20:19:09 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/09 19:18:49 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/12 03:26:38 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_b(t_list **head)
+void	swap_b(t_list **head, int i)
 {
 	int	tmp;
 
@@ -21,5 +21,6 @@ void	swap_b(t_list **head)
 	tmp = (*head)->next->num;
 	(*head)->next->num = (*head)->num;
 	(*head)->num = tmp;
-	ft_putstr("sb\n");
+	if (i == 1)
+		ft_putstr("sb\n");
 }

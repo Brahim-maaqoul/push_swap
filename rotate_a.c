@@ -6,13 +6,13 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 02:41:42 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/17 02:05:48 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/12 03:27:53 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate_a(t_list **head)
+void	rotate_a(t_list **head, int i)
 {
 	t_list	*a;
 	t_list	*last;
@@ -24,7 +24,8 @@ void	rotate_a(t_list **head)
 	last = ft_lstlast(a);
 	last->next = a;
 	a->next = NULL;
-	ft_putstr("ra\n");
+	if (i == 1)
+		ft_putstr("ra\n");
 }
 
 // #include <stdio.h>

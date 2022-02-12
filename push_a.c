@@ -6,13 +6,13 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 14:32:03 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/08 18:50:58 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/12 03:29:37 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_a(t_list **stack_a, t_list **stack_b)
+void	push_a(t_list **stack_a, t_list **stack_b, int i)
 {
 	t_list	*tmp;
 
@@ -21,7 +21,8 @@ void	push_a(t_list **stack_a, t_list **stack_b)
 	tmp = *stack_b;
 	*stack_b = (*stack_b)->next;
 	ft_lstadd_front(stack_a, tmp);
-	ft_putstr("pa\n");
+	if (i == 1)
+		ft_putstr("pa\n");
 }
 
 // #include <stdio.h>

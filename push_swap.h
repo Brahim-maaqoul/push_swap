@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:38:15 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/11 15:45:35 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/12 03:29:24 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,26 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
-
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 typedef struct s_stack{
 	int				num;
 	struct s_stack	*next;
 }				t_list;
 
 void	free_tab(char **tab, int i);
-void	swap_a(t_list **head);
-void	swap_b(t_list **head);
-void	rotate_a(t_list **head);
-void	rotate_b(t_list **head);
-void	rev_rotate_a(t_list **head);
-void	rev_rotate_b(t_list **head);
-void	push_a(t_list **stack_a, t_list **stack_b);
-void	push_b(t_list **stack_b, t_list **stack_a);
-void	ss(t_list **stack_a, t_list **stack_b);
-void	rr(t_list **stack_a, t_list **stack_b);
-void	rrr(t_list **stack_a, t_list **stack_b);
+void	free_list(t_list **stack);
+void	swap_a(t_list **head, int i);
+void	swap_b(t_list **head, int i);
+void	rotate_a(t_list **head, int i);
+void	rotate_b(t_list **head, int i);
+void	rev_rotate_a(t_list **head, int i);
+void	rev_rotate_b(t_list **head, int i);
+void	push_a(t_list **stack_a, t_list **stack_b, int i);
+void	push_b(t_list **stack_b, t_list **stack_a, int i);
+void	ss(t_list **stack_a, t_list **stack_b, int i);
+void	rr(t_list **stack_a, t_list **stack_b, int i);
+void	rrr(t_list **stack_a, t_list **stack_b, int i);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
@@ -58,14 +60,19 @@ int		ft_atoi(const char	*str);
 int		ft_check_sorted(t_list **head);
 int	ft_duplicate(char **av);
 int	get_small(t_list **head);
+int	ft_strcmp(char	*s1, char	*s2);
 int	get_big(t_list **head);
 int	get_pos(t_list **a, int num);
 int	ft_isdigit(char *str);
+int	*list_to_tab(t_list **a);
 void	ft_putstr(char *str);
 size_t    ft_strlen(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(const char *src);
+char	*ft_strchr(char *str, int c);
+char	*ft_join(char *s1, char *s2);
+char	*get_next_line(int fd);
 
 #endif

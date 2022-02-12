@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 06:12:18 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/09 00:40:47 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/12 03:31:19 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ static void	check_5(t_list **a, t_list	**b)
 	{
 		while (i < get_small(a))
 		{	
-			rotate_a(a);
+			rotate_a(a, 1);
 			i++;
 		}
-		push_b(b, a);
+		push_b(b, a, 1);
 	}
 	else
 	{
 		while (i <= get_small(a))
 		{
-			rev_rotate_a(a);
+			rev_rotate_a(a, 1);
 			i++;
 		}
-		push_b(b, a);
+		push_b(b, a, 1);
 	}
 }
 
@@ -45,7 +45,7 @@ void	algo_5(t_list **a, t_list	**b)
 		check_5(a, b);
 	algo_3(a);
 	while (ft_lstsize(*b))
-		push_a(a, b);
+		push_a(a, b, 1);
 }
 
 // #include <stdio.h>

@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 19:17:43 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/11 15:44:14 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/12 03:32:03 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ static void	part_a(t_list **a, t_list **b)
 	if (i <= (ft_lstsize(*a) / 2))
 	{
 		while (i-- > 1)
-			rotate_a(a);
+			rotate_a(a, 1);
 	}
 	else
 	{
 		while(i++ <= ft_lstsize(*a))
-			rev_rotate_a(a);
+			rev_rotate_a(a, 1);
 	}
-	push_b(b, a);
+	push_b(b, a, 1);
 }
 
 static void	part_b(t_list **a, t_list **b)
@@ -38,32 +38,37 @@ static void	part_b(t_list **a, t_list **b)
 	if (i <= (ft_lstsize(*b) / 2))
 	{
 		while (i-- > 1)
-			rotate_b(b);
+			rotate_b(b, 1);
 	}
 	else
 	{
 		while (i++ <= ft_lstsize(*b))
-			rev_rotate_b(b);
+			rev_rotate_b(b, 1);
 	}
-	push_a(a, b);
+	push_a(a, b, 1);
 }
 
 void	algo_100(t_list **a, t_list **b)
 {
 	int	i;
 	int	len;
+	int	len1;
+	int	*tab;
 
 	i = 1;
-	len = ft_lstsize(*a);
+	tab = list_to_tab(a);
+	len = ft_lstsize(*a) / 5;
+	len1 = ft_lstsize(*a);
 	while (i < 5)
 	{
-		push_parts(a, b, len * i / 4);
+		push_parts(a, b, tab[(len1 * i / 4)]);
 		i++;
 	}
 	while (ft_lstsize(*a))
 		part_a(a, b);
 	while (ft_lstsize(*b))
 		part_b(a, b);
+	free (tab);
 }
 
 // #include <stdio.h>
