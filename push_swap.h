@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:38:15 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/12 03:29:24 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/12 20:03:19 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
+
 typedef struct s_stack{
 	int				num;
 	struct s_stack	*next;
@@ -38,11 +39,8 @@ void	rr(t_list **stack_a, t_list **stack_b, int i);
 void	rrr(t_list **stack_a, t_list **stack_b, int i);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lstclear(t_list **lst, void (*del)(void*));
-void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	put_err();
 void	ft_putnbr(int n);
-void	ft_putchar(char c);
 void    take_args(t_list **s, int ac, char **av);
 void	algo_3(t_list **a);
 void	algo_5(t_list **a, t_list **b);

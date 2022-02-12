@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 19:02:06 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/12 03:35:08 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/12 21:28:35 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,27 +74,29 @@ static void	check_sorted(t_list **a, t_list **b)
 	}
 }
 
-// int main(int ac, char **av)
-// {
-// 	t_list	**a;
-// 	t_list	**b;
-// 	char	*line;
+int main(int ac, char **av)
+{
+	t_list	**a;
+	t_list	**b;
+	char	*line;
 
-// 	a = stack_aloc(a);
-// 	b = stack_aloc(b);
-// 	if (ac > 1)
-// 	{
-// 		take_args(a, ac, av);
-// 		line = get_next_line(0);
-// 		while (line)
-// 		{
-// 			check_op(a, b, line);
-// 			free (line);
-// 			line = get_next_line(0);
-// 		}
-// 		check_sorted(a, b);
-// 	}
-// 	free_list(a);
-// 	free_list(b);
-// 	return (0);
-// }
+	a = NULL;
+	b = NULL;
+	a = stack_aloc(a);
+	b = stack_aloc(b);
+	if (ac > 1)
+	{
+		take_args(a, ac, av);
+		line = get_next_line(0);
+		while (line)
+		{
+			check_op(a, b, line);
+			free (line);
+			line = get_next_line(0);
+		}
+		check_sorted(a, b);
+	}
+	free_list(a);
+	free_list(b);
+	return (0);
+}

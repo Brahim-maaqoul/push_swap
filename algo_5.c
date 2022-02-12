@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 06:12:18 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/12 03:31:19 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/12 21:08:44 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static void	check_5(t_list **a, t_list	**b)
 {
 	int		i;
-	int		mid;
 
 	i = 1;
 	if (get_small(a) <= 2)
