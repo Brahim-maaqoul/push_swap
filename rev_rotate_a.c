@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 20:20:06 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/12 03:28:14 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:32:47 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,3 @@ void	rev_rotate_a(t_list **a, int i)
 	if (i == 1)
 		ft_putstr("rra\n");
 }
-
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	t_list	*node;
-// 	t_list	*b;
-// 	node = ft_lstnew(2);
-// 	node->next = ft_lstnew(3);
-// 	node->next->next = ft_lstnew(1);
-// 	printf("%d\n", node->num);
-// 	printf("%d\n", node->next->num);
-// 	printf("%d\n\n", node->next->next->num);
-// 	push_b(&b, &node);
-// 	rev_rotate_a(&node);
-// 	printf("%d\n", b->num);
-// 	printf("%d\n", node->num);
-// 	printf("%d\n", node->next->num);
-// }

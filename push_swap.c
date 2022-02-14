@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 02:42:29 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/12 21:28:11 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/14 23:21:28 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
+	check_args(av);
 	a = stack_aloc(a);
 	b = stack_aloc(b);
 	if (ac > 1)
@@ -28,6 +29,7 @@ int	main(int ac, char **av)
 		if (ft_check_sorted(a))
 		{
 			free_list(a);
+			free_list(b);
 			return (0);
 		}
 		sort_all(a, b);

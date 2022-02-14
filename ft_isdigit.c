@@ -6,22 +6,15 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:48:59 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/07 22:13:10 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/14 22:02:18 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_isdigit(char *str)
+int	ft_isdigit(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 48 && str[i] <= 57)
-			return (1);
-		i++;
-	}
+	if (c >= 48 && c <= 57)
+		return (1);
 	return (0);
 }

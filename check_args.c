@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_small.c                                        :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/30 13:43:04 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/14 14:22:17 by bmaaqoul         ###   ########.fr       */
+/*   Created: 2022/02/14 23:04:55 by bmaaqoul          #+#    #+#             */
+/*   Updated: 2022/02/14 23:22:51 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_small(t_list **head)
+void	check_args(char **av)
 {
-	t_list	*tmp;
-	int		min;
-	int		pos;
+	int	i;
+	int	j;
+	int	boool;
 
-	pos = 1;
-	tmp = *head;
-	min = tmp->num;
-	tmp = tmp->next;
-	while (tmp)
+	i = 1;
+	while (av[i])
 	{
-		if (min > tmp->num)
-			min = tmp->num;
-		tmp = tmp->next;
+		if (av[i][0] == '\0')
+			put_err();
+		j = 0;
+		boool = 1;
+		while (av[i][j])
+		{
+			if (ft_isdigit(av[i][j]))
+				boool = 0;
+			j++;
+		}
+		if (boool)
+			put_err();
+		i++;
 	}
-	tmp = *head;
-	while (tmp && min != tmp->num)
-	{
-		pos++;
-		tmp = tmp->next;
-	}
-	return (pos);
 }

@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 02:41:42 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/12 03:27:53 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:33:11 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,28 +27,3 @@ void	rotate_a(t_list **head, int i)
 	if (i == 1)
 		ft_putstr("ra\n");
 }
-
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	t_list	*node;
-// 	t_list	*b;
-
-// 	node = ft_lstnew(2);
-// 	node->next = ft_lstnew(3);
-// 	node->next->next = ft_lstnew(1);
-// 	node->next->next->next = ft_lstnew(4);
-// 	printf("%d\n", node->num);
-// 	printf("%d\n", node->next->num);
-// 	printf("%d\n", node->next->next->num);
-// 	printf("%d\n", node->next->next->next->num);
-// 	push_b(&b, &node);
-// 	rotate_a(&node);
-// 	printf("%d\n", b->num);
-// 	printf("%d\n", node->num);
-// 	printf("%d\n", node->next->num);
-// 	printf("%d\n", node->next->next->num);
-// 	// printf("%d\n", node->next->next->next->num);
-// 	 //printf("%d\n", node->next->next->next->next->num);
-// }

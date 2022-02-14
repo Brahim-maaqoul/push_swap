@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 19:02:06 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/12 21:28:35 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/14 23:08:51 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	sort_op(t_list **a, t_list **b, char *line)
 	else if (!ft_strcmp(line, "pa\n"))
 		push_a(a, b, 0);
 	else if (!ft_strcmp(line, "pb\n"))
-		push_b(b ,a, 0);
+		push_b(b, a, 0);
 }
 
 static void	check_op(t_list **a, t_list **b, char *line)
@@ -50,7 +50,7 @@ static void	check_op(t_list **a, t_list **b, char *line)
 		free_list(a);
 		free_list(b);
 		free (line);
-		exit (1);
+		put_err();
 	}
 	else
 		sort_op(a, b, line);
@@ -74,7 +74,7 @@ static void	check_sorted(t_list **a, t_list **b)
 	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_list	**a;
 	t_list	**b;
@@ -82,6 +82,7 @@ int main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
+	check_args(av);
 	a = stack_aloc(a);
 	b = stack_aloc(b);
 	if (ac > 1)

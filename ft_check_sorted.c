@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 21:55:04 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/01/09 23:40:12 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:17:25 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,3 @@ int	ft_check_sorted(t_list **head)
 	}
 	return (1);
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-// 	t_list	*node;
-
-// 	node = ft_lstnew(1);
-// 	node->next = ft_lstnew(3);
-// 	node->next->next = ft_lstnew(2);
-// 	printf("%d\n", ft_check_sorted(&node));
-// 	printf("%d\n", node->num);
-// 	printf("%d\n", node->next->num);
-// 	printf("%d\n", node->next->next->num);
-// }

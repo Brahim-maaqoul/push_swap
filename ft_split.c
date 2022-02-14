@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/14 14:19:09 by bmaaqoul          #+#    #+#             */
+/*   Updated: 2022/02/14 14:19:09 by bmaaqoul         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static char	**ft_free(char **tab, int i)
@@ -8,7 +20,7 @@ static char	**ft_free(char **tab, int i)
 		i--;
 	}
 	free(tab);
-	tab = NULL; 
+	tab = NULL;
 	return (NULL);
 }
 
