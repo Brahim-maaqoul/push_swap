@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 00:06:47 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/12 03:26:22 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/15 23:03:57 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	swap_a(t_list **head, int i)
 {
 	int	tmp;
 
-	if (!*head || !(*head)->next)
+	if (!head || !*head)
 		return ;
 	tmp = (*head)->next->num;
 	(*head)->next->num = (*head)->num;

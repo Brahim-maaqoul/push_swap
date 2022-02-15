@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 02:41:42 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/14 14:33:11 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/15 23:06:44 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rotate_a(t_list **head, int i)
 	t_list	*a;
 	t_list	*last;
 
-	if (!*head)
+	if (!head || !*head)
 		return ;
 	a = *head;
 	*head = (*head)->next;
