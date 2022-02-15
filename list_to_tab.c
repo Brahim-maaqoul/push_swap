@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 21:42:37 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/14 14:22:34 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/15 15:15:45 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	sort_tab(int *tab, int s)
 	while (i < s)
 	{
 		j = i + 1;
-		while (j < s - 1)
+		while (j < s)
 		{
 			if (tab[j] < tab[i])
 			{

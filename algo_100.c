@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 19:17:43 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/02/14 14:12:47 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/02/15 15:08:15 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	algo_100(t_list **a, t_list **b)
 	len = ft_lstsize(*a);
 	while (i < 5)
 	{
-		push_parts(a, b, tab[(len * i / 4)]);
+		push_parts(a, b, tab[(len * i / 5) - 1]);
 		i++;
 	}
 	while (ft_lstsize(*a))
